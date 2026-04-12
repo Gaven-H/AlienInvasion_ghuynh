@@ -9,4 +9,4 @@ class AlienInvasion:
         pygame.display.set_caption("Alien Invasion")
 
 if __name__ == '__main__':
-    pass
+    ai = AlienInvasion()
