@@ -12,6 +12,11 @@ class AlienInvasion:
 
     def run_game(self):
         # Game Loop
+        while self.running:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
 
 
 if __name__ == '__main__':
