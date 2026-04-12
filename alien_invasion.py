@@ -18,7 +18,7 @@ class AlienInvasion:
                     self.running = False
                     pygame.quit()
                     sys.exit()
-        pygame.display.flip()
+            pygame.display.flip()
 
 
 if __name__ == '__main__':
