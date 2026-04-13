@@ -41,6 +41,10 @@ class AlienInvasion:
                 self.running = False
                 pygame.quit()
                 sys.exit()
+            
+            elif event.type == pygame.KEYDOWN:
+                
+            elif event.type == pygame.KEYUP:
 
 
 if __name__ == '__main__':
