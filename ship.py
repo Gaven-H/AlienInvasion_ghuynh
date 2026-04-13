@@ -18,7 +18,7 @@ class Ship:
              )
         
         self.rect = self.image.get_rect()
-        self.rect.midbottom = self.boundries.midbottom
+        self.rect.midleft = self.boundries.midleft
         self.moving_right = False
         self.moving_left = False
         self.x = float(self.rect.x)
