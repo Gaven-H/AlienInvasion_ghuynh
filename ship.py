@@ -17,7 +17,13 @@ if TYPE_CHECKING:
     from arsenal import Arsenal
 
 class Ship:
+    """
+    Represents the player's ship, including movement and rendering.
+    """
     def __init__(self, game: "AlienInvasion", arsenal: "Arsenal") -> None:
+        """
+        Initializes the ship, loads its image, and sets its starting position.
+        """
         self.game = game
         self.settings = game.settings
         self.screen = game.screen
@@ -37,11 +43,17 @@ class Ship:
         self.arsenal = arsenal
 
     def update(self) -> None:
-        # Updating the position of the ship
+        """
+        Updates the ship's position and its arsenal.
+        """
         self._update_ship_movement()
         self.arsenal.update_arsenal()
 
     def _update_ship_movement(self):
+        """
+        Updates the vertical movement of the ship
+        and keeps it within screen boundries.
+        """
         temp_speed = self.settings.ship_speed
 
         if self.moving_up and self.rect.top > 0:
@@ -53,8 +65,15 @@ class Ship:
         self.rect.y = self.y
 
     def draw (self) -> None:
+        """
+        Draws the ship and its bullets on the screen.
+        """
         self.arsenal.draw()
         self.screen.blit(self.image, self.rect)
 
     def fire_method(self) -> bool:
+        """
+        fires a bullet if the limit has not been reached and returns bool:
+        True if a bullet was fired or False otherwise.
+        """
         return self.arsenal.fire_bullet()
