@@ -22,6 +22,7 @@ class Ship:
         self.moving_right = False
         self.moving_left = False
         self.x = float(self.rect.x)
+        self.arsenal = arsenal
 
     def update(self) -> None:
         # Updating the position of the ship
