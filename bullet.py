@@ -15,3 +15,5 @@ class Bullet(Sprite):
         self.image= pygame.transform.scale(self.image,
             (self.settings.bullet_w, self.settings.bullet_h)
              )
+        
+        self.rect = self.image.get_rect()
