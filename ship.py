@@ -42,3 +42,5 @@ class Ship:
 
     def draw (self) -> None:
         self.screen.blit(self.image, self.rect)
+
+    def fire_method(self) -> None:
