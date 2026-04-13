@@ -18,7 +18,7 @@ class Bullet(Sprite):
         
         self.rect = self.image.get_rect()
         self.rect.midtop = game.ship.rect.midright
-        self.y = float(self.rect.x)
+        self.x = float(self.rect.x)
 
     def update(self):
         self.x -= self.settings.bullet_speed
