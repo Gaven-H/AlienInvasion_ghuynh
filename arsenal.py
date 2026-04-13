@@ -6,4 +6,5 @@ if TYPE_CHECKING:
 
 class ShipArsenal:
     def __init__(self, game: "AlienInvasion") -> None:
-        
+        self.game = game
+        self.settings = game.settings
