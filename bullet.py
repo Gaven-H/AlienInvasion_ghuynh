@@ -18,7 +18,8 @@ class Bullet(Sprite):
         self.image = pygame.transform.rotate(self.image, -90)
         
         self.rect = self.image.get_rect()
-        self.rect.midtop = game.ship.rect.midright
+        self.rect.centery = game.ship.rect.centery
+        self.rect.left = game.ship.rect.right
         self.x = float(self.rect.x)
 
     def update(self):
