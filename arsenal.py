@@ -1,3 +1,14 @@
+"""
+Program: Alien Invasion - Arsenal
+Author: Gaven Huynh
+Purpose: This file contains the Arsenal class which has everything to
+do with the player bullets in the game. From creation, positioning,
+removing them, as well as drawing them; it handles all of the bullet logic.
+Starter Code: Built upon starter code and assets provided by the class
+then fully fleshed out by me in a different repo. That was imported
+into this repo for further editing to make it more my own.
+Date: April 13th 2026
+"""
 import pygame
 from bullet import Bullet
 from typing import TYPE_CHECKING
