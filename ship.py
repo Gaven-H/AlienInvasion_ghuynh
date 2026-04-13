@@ -26,5 +26,11 @@ class Ship:
         # Updating the position of the ship
         temp_speed = 5
 
+        if self.moving_right:
+            self.x += temp_speed
+        
+        if self.moving_left:
+            self.x -= temp_speed
+
     def draw (self) -> None:
         self.screen.blit(self.image, self.rect)
