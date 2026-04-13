@@ -21,8 +21,8 @@ class Bullet(Sprite):
         self.y = float(self.rect.x)
 
     def update(self):
-        self.y -= self.settings.bullet_speed
-        self.rect.y = self.y
+        self.x -= self.settings.bullet_speed
+        self.rect.x = self.x
 
     def draw_bullet(self) -> None:
         self.screen.blit(self.image, self.rect)
