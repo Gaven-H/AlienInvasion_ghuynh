@@ -27,6 +27,7 @@ class Ship:
     def update(self) -> None:
         # Updating the position of the ship
         self._update_ship_movement()
+        self.arsenal.update_arsenal()
 
     def _update_ship_movement(self):
         temp_speed = self.settings.ship_speed
