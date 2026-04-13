@@ -11,7 +11,14 @@ Date: April 13th 2026
 from pathlib import Path
 
 class Settings:
+    """
+    A class to store all settings for the Alien Invasion game.
+    """
     def __init__(self) -> None:
+        """
+        Initializes all game settings including screen dimensions,
+        asset paths, and gameplay variables (ie.movement speed).
+        """
         self.name: str = "Alien Invasion"
         self.screen_w = 1200
         self.screen_h = 800
