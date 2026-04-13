@@ -1,9 +1,10 @@
 import pygame
+from bullet import Bullet
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from alien_invasion import AlienInvasion
-    from bullet import Bullet
+    
 
 class Arsenal:
     def __init__(self, game: "AlienInvasion") -> None:
