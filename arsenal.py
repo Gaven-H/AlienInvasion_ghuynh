@@ -12,3 +12,5 @@ class ShipArsenal:
 
     def update_arsenal (self) -> None:
         self.arsenal.update()
+
+    def draw(self) -> None:
