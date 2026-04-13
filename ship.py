@@ -1,3 +1,14 @@
+"""
+Program: Alien Invasion - Ship
+Author: Gaven Huynh
+Purpose: Contains the class "Ship" which governs the behavior of the
+player model. It handles loading the ship, movement, positioning and
+interacting with the Arsenal (bullets) of the game.
+Starter Code: Built upon starter code and assets provided by the class
+then fully fleshed out by me in a different repo. That was imported
+into this repo for further editing to make it more my own.
+Date: April 13th 2026
+"""
 import pygame
 from typing import TYPE_CHECKING
 
