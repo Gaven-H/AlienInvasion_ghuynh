@@ -18,25 +18,44 @@ if TYPE_CHECKING:
     
 
 class Arsenal:
+    """
+    Manages a collection of bullets fired by the ship.
+    """
     def __init__(self, game: "AlienInvasion") -> None:
+        """
+        Initializes the arsenal and bullet group.
+        """
         self.game = game
         self.settings = game.settings
         self.arsenal = pygame.sprite.Group()
 
     def update_arsenal (self) -> None:
+        """
+        Updates all bullets and removes those off-screen.
+        """
         self.arsenal.update()
         self._remove_bullets_offscreen()
 
     def _remove_bullets_offscreen(self) -> None:
+        """
+        Removes bullets that have moved off the right side of the screen.
+        """
         for bullet in self.arsenal.copy():
             if bullet.rect.left >= self.game.screen.get_rect().right:
                 self.arsenal.remove(bullet)
 
     def draw(self) -> None:
+        """
+        Draws all bullets to the screen.
+        """
         for bullet in self.arsenal:
             bullet.draw_bullet()
         
     def fire_bullet(self) -> bool:
+        """
+        Creates and adds a new bullet if under the limit and returns bool:
+        True if a bullet was created and False otherwise.
+        """
         if len(self.arsenal) < self.settings.bullet_amount:
             new_bullet = Bullet(self.game)
             self.arsenal.add(new_bullet)
