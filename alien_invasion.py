@@ -16,7 +16,15 @@ from ship import Ship
 from arsenal import Arsenal
 
 class AlienInvasion:
+    """
+    Main class that manages the game initialization, execution
+    event handling and screen updates.
+    """
     def __init__(self) -> None:
+        """
+        Initializes the game, loads settings, creates the screen,
+        loads assets, and initializes the ship.
+        """
         pygame.init()
         self.settings = Settings()
 
@@ -40,7 +48,9 @@ class AlienInvasion:
         self.ship = Ship(self, Arsenal(self))
 
     def run_game(self) -> None:
-        # Game Loop
+        """
+        Starts and runs the main game loop.
+        """
         while self.running:
             self._check_events()
             self.ship.update()
@@ -48,11 +58,17 @@ class AlienInvasion:
             self.clock.tick(self.settings.FPS)
 
     def _update_screen(self) -> None:
+        """
+        Draws all visual elements to the screen and updates the display.
+        """
         self.screen.blit(self.bg, (0,0))
         self.ship.draw()
         pygame.display.flip()
 
     def _check_events(self) -> None:
+        """
+        Processes all user input events such as key presses and quitting out.
+        """
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.running = False
@@ -65,6 +81,9 @@ class AlienInvasion:
                 self._check_keyup_events(event)
 
     def _check_keyup_events(self, event) -> None:
+        """
+        Handles key release events to stop ship movement.
+        """
         if event.key == pygame.K_UP:
             self.ship.moving_up = False
 
@@ -72,6 +91,9 @@ class AlienInvasion:
             self.ship.moving_down = False
 
     def _check_keydown_events(self, event) -> None:
+        """
+        Handles key press events to control movement and firing.
+        """
         if event.key == pygame.K_UP:
             self.ship.moving_up = True
 
@@ -89,5 +111,8 @@ class AlienInvasion:
             sys.exit()
 
 if __name__ == '__main__':
+    """
+    Entry point of the program. Creates and runs the game instance.
+    """
     ai = AlienInvasion()
     ai.run_game()
