@@ -23,7 +23,7 @@ class Ship:
 
     def update(self) -> None:
         # Updating the position of the ship
-        pass
+        temp_speed = 5
 
     def draw (self) -> None:
         self.screen.blit(self.image, self.rect)
