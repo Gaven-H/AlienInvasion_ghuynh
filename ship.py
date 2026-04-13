@@ -8,3 +8,8 @@ class Ship:
         self.game = game
         self.settings = game.settings
         self.screen = game.screen
+        
+        self.image= pygame.image.load(self.settings.ship_file)
+        self.image= pygame.transform.scale(self.image,
+            (self.settings.ship_w, self.settings.ship_h)
+             )
