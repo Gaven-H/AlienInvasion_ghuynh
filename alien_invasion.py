@@ -1,3 +1,14 @@
+"""
+Program: Alien Invasion
+Author: Gaven Huynh
+Purpose: Contains the main game loop and controls for the game "Alien Invasion."
+It initializes pygame, handles inputs, loads the settings, renders the screen,
+and updates game objects. The bread and butter of the program.
+Starter Code: Built upon starter code and assets provided by the class
+then fully fleshed out by me in a different repo. That was imported
+into this repo for further editing to make it more my own.
+Date: April 13th 2026
+"""
 import sys
 import pygame
 from settings import Settings
