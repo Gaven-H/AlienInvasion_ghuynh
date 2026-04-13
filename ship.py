@@ -26,6 +26,9 @@ class Ship:
 
     def update(self) -> None:
         # Updating the position of the ship
+        self._update_ship_movement()
+
+    def _update_ship_movement(self):
         temp_speed = self.settings.ship_speed
 
         if self.moving_right and self.rect.right < self.boundries.right:
