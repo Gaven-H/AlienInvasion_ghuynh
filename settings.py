@@ -14,3 +14,4 @@ class Settings:
         self.ship_speed = 10
 
         self.bullet_file = Path.cwd() / 'Assets' / 'images' / 'laserBlast.png'
+        self.laser_sound = Path.cwd() / 'Assets' / 'sound' / 'laser.mp3'
