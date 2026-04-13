@@ -15,6 +15,7 @@ class Bullet(Sprite):
         self.image= pygame.transform.scale(self.image,
             (self.settings.bullet_w, self.settings.bullet_h)
              )
+        self.image = pygame.transform.rotate(self.image, -90)
         
         self.rect = self.image.get_rect()
         self.rect.midtop = game.ship.rect.midright
