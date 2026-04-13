@@ -14,3 +14,5 @@ class ShipArsenal:
         self.arsenal.update()
 
     def draw(self) -> None:
+        for bullet in self.arsenal:
+            bullet.draw_bullet()
