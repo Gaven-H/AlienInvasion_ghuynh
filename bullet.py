@@ -22,7 +22,7 @@ class Bullet(Sprite):
         self.x = float(self.rect.x)
 
     def update(self):
-        self.x -= self.settings.bullet_speed
+        self.x += self.settings.bullet_speed
         self.rect.x = self.x
 
     def draw_bullet(self) -> None:
