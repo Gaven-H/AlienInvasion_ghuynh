@@ -9,7 +9,7 @@ class Ship:
         self.game = game
         self.settings = game.settings
         self.screen = game.screen
-        self.screen_rect = self.screen.get_rect()
+        self.boundries = self.screen.get_rect()
         
         self.image= pygame.image.load(self.settings.ship_file)
         self.image= pygame.transform.scale(self.image,
@@ -17,7 +17,7 @@ class Ship:
              )
         
         self.rect = self.image.get_rect()
-        self.rect.midbottom = self.screen_rect.midbottom
+        self.rect.midbottom = self.boundries.midbottom
         self.moving_right = False
         self.moving_left = False
         self.x = float(self.rect.x)
