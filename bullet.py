@@ -1,3 +1,15 @@
+"""
+Program: Alien Invasion - Bullet
+Author: Gaven Huynh
+Purpose: Contains the Bullet class which represents the projectile
+shot out by the player to destroy invaders. They are initialized at
+the front of the ship and are made to move from one side of the screen 
+to the other.
+Starter Code: Built upon starter code and assets provided by the class
+then fully fleshed out by me in a different repo. That was imported
+into this repo for further editing to make it more my own.
+Date: April 13th 2026
+"""
 import pygame
 from pygame.sprite import Sprite
 from typing import TYPE_CHECKING
