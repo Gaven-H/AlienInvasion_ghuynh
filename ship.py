@@ -20,6 +20,7 @@ class Ship:
         self.rect.midbottom = self.screen_rect.midbottom
         self.moving_right = False
         self.moving_left = False
+        self.x = float(self.rect.x)
 
     def update(self) -> None:
         # Updating the position of the ship
