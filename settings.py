@@ -1,3 +1,13 @@
+"""
+Program: Alien Invasion - Settings
+Author: Gaven Huynh
+Purpose: Is the central hub for all "settings" for the game where values
+can be configured to change the feel of the game.
+Starter Code: Built upon starter code and assets provided by the class
+then fully fleshed out by me in a different repo. That was imported
+into this repo for further editing to make it more my own.
+Date: April 13th 2026
+"""
 from pathlib import Path
 
 class Settings:
