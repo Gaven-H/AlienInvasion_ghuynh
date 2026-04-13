@@ -33,11 +33,11 @@ class Ship:
     def _update_ship_movement(self):
         temp_speed = self.settings.ship_speed
 
-        if self.moving_up and self.rect.top > self.boundries.top:
-            self.y += temp_speed
+        if self.moving_up and self.rect.top > 0:
+            self.y -= temp_speed
         
         if self.moving_down and self.rect.bottom < self.boundries.bottom:
-            self.y -= temp_speed
+            self.y += temp_speed
         
         self.rect.y = self.y
 
