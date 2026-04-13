@@ -26,7 +26,7 @@ class Ship:
         # Updating the position of the ship
         temp_speed = self.settings.ship_speed
 
-        if self.moving_right:
+        if self.moving_right and self.rect.right < self.boundries.right:
             self.x += temp_speed
         
         if self.moving_left:
