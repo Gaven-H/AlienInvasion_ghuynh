@@ -7,3 +7,9 @@ then fully fleshed out by me in a different repo. That was imported
 into this repo for further editing to make it more my own.
 Date: April 20th 2026
 """
+import pygame
+from pygame.sprite import Sprite
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from alien_fleet import AlienFleet
