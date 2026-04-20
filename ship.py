@@ -77,3 +77,11 @@ class Ship:
         True if a bullet was fired or False otherwise.
         """
         return self.arsenal.fire_bullet()
+    
+    def check_collisions(self, other_group) -> bool:
+        """
+        Checks collision with aliens.
+        """
+        if pygame.sprite.spritecollideany(self, other_group):
+            return True
+        return False
