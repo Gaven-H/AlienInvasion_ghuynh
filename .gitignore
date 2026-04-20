@@ -1,2 +1,6 @@
 .venv
 vscode
+__pycache__/ship.cpython-312.pyc
+__pycache__/settings.cpython-312.pyc
+__pycache__/bullet.cpython-312.pyc
+__pycache__/arsenal.cpython-312.pyc
