@@ -15,6 +15,9 @@ if TYPE_CHECKING:
     from alien_fleet import AlienFleet
 
 class Alien(Sprite):
+    """
+    Represents a single alien enemy.
+    """
     def __init__(self, fleet: "AlienFleet", x: float, y: float) -> None:
         """
         Initializes alien at the given position
@@ -30,28 +33,29 @@ class Alien(Sprite):
             (self.settings.alien_w, self.settings.alien_h)
              )
         
+        self.image = pygame.transform.rotate(self.image, 180)
+
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
+
         self.y = float(self.rect.y)
         self.x = float(self.rect.x)
 
     def update(self) -> None:
         """
-        Moves aliens horizontally towards the left
+        Moves aliens vertically depending on the direction.
         """
-        temp_speed = self.settings.fleet_speed
-
-        self.x += temp_speed * self.fleet.fleet_direction
-        self.rect.x = self.x
-        self.rect.y = self.y
+        self.y += self.settings.fleet_speed * self.fleet.fleet_direction
+        self.rect.y = int(self.y)
+        self.rect.x = int(self.x)
 
     def check_edges(self) -> bool:
         """
-        Checks if the alien has reached the left edge of the screen.
+        Checks if the alien has reached the top or bottom edge of the screen.
         """
-        return (self.rect.right >= self.boundries.right
-                or self.rect.left <= self.boundries.left)
+        return (self.rect.top <= self.boundries.top
+                or self.rect.bottom >= self.boundries.bottom)
 
     def draw_alien(self) -> None:
         """
