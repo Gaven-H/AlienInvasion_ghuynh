@@ -16,6 +16,9 @@ if TYPE_CHECKING:
 
 class Alien(Sprite):
     def __init__(self, fleet: "AlienFleet", x: float, y: float) -> None:
+        """
+        Initializes alien at the given position
+        """
         super().__init__()
         self.fleet = fleet
         self.screen = fleet.game.screen
@@ -34,6 +37,9 @@ class Alien(Sprite):
         self.x = float(self.rect.x)
 
     def update(self) -> None:
+        """
+        Moves aliens horizontally towards the left
+        """
         temp_speed = self.settings.fleet_speed
 
         self.x += temp_speed * self.fleet.fleet_direction
@@ -41,8 +47,14 @@ class Alien(Sprite):
         self.rect.y = self.y
 
     def check_edges(self) -> bool:
+        """
+        Checks if the alien has reached the left edge of the screen.
+        """
         return (self.rect.right >= self.boundries.right
                 or self.rect.left <= self.boundries.left)
 
     def draw_alien(self) -> None:
+        """
+        Draws the alien on the screen.
+        """
         self.screen.blit(self.image, self.rect)
