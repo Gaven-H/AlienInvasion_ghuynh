@@ -43,7 +43,7 @@ class AlienFleet:
             )
        
         x_offset, y_offset = self.calcualte_offset(
-            alien_w, alien_h, screen_w, fleet_cols, fleet_rows
+            alien_w, alien_h, screen_w, screen_h, fleet_cols, fleet_rows
             )
 
         self._create_rectangle_fleet(
@@ -64,15 +64,17 @@ class AlienFleet:
                     continue
                 self._create_alien(current_x, current_y)
 
-    def calcualte_offset(self, alien_w, alien_h, screen_w, fleet_cols, fleet_rows):
+    def calcualte_offset(
+            self, alien_w, alien_h, screen_w, screen_h, fleet_cols, fleet_rows
+            ):
         """
         Centers the fleet vertically and places it on the right side.
         """
         fleet_width = fleet_cols * alien_w
         fleet_height = fleet_rows * alien_h
 
-        x_offset = screen_w - fleet_width
-        y_offset = (self.settings.screen_h - fleet_height) // 2
+        x_offset = screen_w - fleet_width - alien_w
+        y_offset = (screen_h - fleet_height) // 2
 
         return int(x_offset), int(y_offset)
 
@@ -80,17 +82,14 @@ class AlienFleet:
         """
         Calculates how many aliens fit horizontally and vertically.
         """
-        fleet_cols = (screen_w//alien_w)
-        fleet_rows = ((screen_h/2)//alien_h)
+        fleet_cols = (screen_w // alien_w)/2
+        fleet_rows = (screen_h // alien_h)
+
         if fleet_cols % 2 == 0:
             fleet_cols -=1
-        else:
-            fleet_cols -= 2
 
         if fleet_rows % 2 == 0:
             fleet_rows -= 1
-        else:
-            fleet_cols -= 2
 
         return int(fleet_cols), int(fleet_rows)
     
