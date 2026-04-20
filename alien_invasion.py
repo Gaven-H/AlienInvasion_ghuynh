@@ -79,14 +79,20 @@ class AlienInvasion:
             self._update_screen()
             self.clock.tick(self.settings.FPS)
 
-        def _check_collisions(self) -> None:
-            #check collisions for ship
-            if self.ship.check_collisions(self.alien_fleet.fleet):
-                self._check_game_status()
-            #subtract one life
-            #check collisions for aliens and bottom of screen
-            if self.alien_fleet.check_fleet_bottom():
-                self._check_game_status()
+    def _check_collisions(self) -> None:
+        """
+        Handles all collision logic:
+        - Ship colliding with aliens
+        - Aliens reaching left side (lose condition)
+        - Bullets hitting aliens
+        """
+        #check collisions for ship
+        if self.ship.check_collisions(self.alien_fleet.fleet):
+            self._check_game_status()
+        #subtract one life
+        #check collisions for aliens and bottom of screen
+        if self.alien_fleet.check_fleet_bottom():
+            self._check_game_status()
         #check collisions of projectiles and aliens
         collisions = self.alien_fleet.check_collisions(self.ship.arsenal.arsenal)
         if collisions:
@@ -97,6 +103,9 @@ class AlienInvasion:
             self._reset_level()
         
     def _check_game_status(self):
+        """
+        Handles logic when the player loses a life.
+        """
         if self.game_stats.ships_left > 0:
             self.game_stats.ships_left -= 1
             self._reset_level()
@@ -107,11 +116,17 @@ class AlienInvasion:
         print(self.game_stats.ships_left)
 
     def _reset_level(self) -> None:
+        """
+        Resets the level by clearing bullets and respawning aliens.
+        """
         self.ship.arsenal.arsenal.empty()
         self.alien_fleet.fleet.empty()
         self.alien_fleet.create_fleet()
 
     def _update_screen(self) -> None:
+        """
+        Draws all elements and updates the display.
+        """
         self.screen.blit(self.bg, (0,0))
         self.ship.draw()
         self.alien_fleet.draw()
