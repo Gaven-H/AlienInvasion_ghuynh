@@ -91,7 +91,7 @@ class AlienInvasion:
             self._check_game_status()
         #subtract one life
         #check collisions for aliens and bottom of screen
-        if self.alien_fleet.check_fleet_bottom():
+        if self.alien_fleet.check_fleet_left():
             self._check_game_status()
         #check collisions of projectiles and aliens
         collisions = self.alien_fleet.check_collisions(self.ship.arsenal.arsenal)
