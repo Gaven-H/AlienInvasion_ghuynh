@@ -68,15 +68,23 @@ class HUD:
         self.level_image = self.font.render(level_str, True,
             self.settings.text_color, None)
         self.level_rect = self.level_image.get_rect()
-        self.level_rect.left = self.padding
-        self.level_rect.top = self.life_rect.bottom + self.padding
+        screen_rect = self.screen.get_rect()
+
+        self.level_rect.right = screen_rect.right - self.padding
+        self.level_rect.bottom = screen_rect.bottom - self.padding
 
     def _draw_lives(self) -> None:
-        current_x = self.padding
-        current_y = self.padding
+        screen_rect = self.screen.get_rect()
+
+        current_x = screen_rect.right - self.padding - self.life_rect.width
+        current_y = screen_rect.bottom - self.padding - self.life_rect.height
+
         for _ in range(self.game_stats.ships_left):
             self.screen.blit(self.life_image, (current_x, current_y))
-            current_x += self.life_rect.width + self.padding
+            current_x -= (self.life_rect.width + self.padding)
+
+        self.level_rect.bottom = current_y - self.padding
+        self.level_rect.right = screen_rect.right - self.padding
 
     def draw(self) -> None:
         self.screen.blit(self.hi_score_image, self.hi_score_rect)
