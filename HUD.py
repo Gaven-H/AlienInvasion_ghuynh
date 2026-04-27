@@ -25,15 +25,6 @@ class HUD:
             self.settings.ship_w, self.settings.ship_h
             ))
         self.life_rect = self.life_image.get_rect()
-        self._setup_life_image()
-        self.update_level()
-
-    def _setup_life_image(self) -> None:
-        self.life_image = pygame.image.load(self.settings.ship_file)
-        self.life_image = pygame.transform.scale(self.life_image, (
-            self.settings.ship_w, self.settings.ship_h
-            ))
-        self.life_rect = self.life_image.get_rect()
 
     def update_scores(self) -> None:
         self._update_score()
