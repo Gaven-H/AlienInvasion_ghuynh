@@ -49,21 +49,21 @@ class Settings:
         self.HUD_font_size = 20
         self.font_file = Path.cwd() / 'Assets' / 'Fonts' / 'Silkscreen' / 'Silkscreen-Bold.ttf'
 
-        def initialize_dynamic_settings(self) -> None:
-            self.ship_speed = 10
-            self.starting_ship_count = 3
+    def initialize_dynamic_settings(self) -> None:
+        self.ship_speed = 10
+        self.starting_ship_count = 3
 
-            self.bullet_w = 25
-            self.bullet_h = 80
-            self.bullet_speed = 7
-            self.bullet_amount = 5
+        self.bullet_w = 25
+        self.bullet_h = 80
+        self.bullet_speed = 7
+        self.bullet_amount = 5
 
-            self.fleet_speed = 2
-            self.fleet_drop_speed = 40
+        self.fleet_speed = 2
+        self.fleet_drop_speed = 40
 
-            self.alien_points = 50
+        self.alien_points = 50
 
-    def increase_difficulty(self) -> None:
-        self.ship_speed *= self.difficulty_scale
-        self.bullet_speed *= self.difficulty_scale
-        self.fleet_speed *= self.difficulty_scale
+def increase_difficulty(self) -> None:
+    self.ship_speed *= self.difficulty_scale
+    self.bullet_speed *= self.difficulty_scale
+    self.fleet_speed *= self.difficulty_scale
