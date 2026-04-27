@@ -42,7 +42,7 @@ class AlienFleet:
             alien_w, screen_w, alien_h, screen_h
             )
        
-        x_offset, y_offset = self.calcualte_offset(
+        x_offset, y_offset = self.calculate_offset(
             alien_w, alien_h, screen_w, screen_h, fleet_cols, fleet_rows
             )
 
@@ -64,7 +64,7 @@ class AlienFleet:
                     continue
                 self._create_alien(current_x, current_y)
 
-    def calcualte_offset(
+    def calculate_offset(
             self, alien_w, alien_h, screen_w, screen_h, fleet_cols, fleet_rows
             ):
         """
