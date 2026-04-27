@@ -63,7 +63,7 @@ class Settings:
 
         self.alien_points = 50
 
-def increase_difficulty(self) -> None:
-    self.ship_speed *= self.difficulty_scale
-    self.bullet_speed *= self.difficulty_scale
-    self.fleet_speed *= self.difficulty_scale
+    def increase_difficulty(self) -> None:
+        self.ship_speed *= self.difficulty_scale
+        self.bullet_speed *= self.difficulty_scale
+        self.fleet_speed *= self.difficulty_scale
