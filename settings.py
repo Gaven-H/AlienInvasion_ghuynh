@@ -12,7 +12,8 @@ from pathlib import Path
 
 class Settings:
     """
-    A class to store all settings for the Alien Invasion game.
+    Stores all static and dynamic configuration values for the game,
+    including screen settings, asset paths, and gameplay parameters.
     """
     def __init__(self) -> None:
         """
@@ -50,6 +51,9 @@ class Settings:
         self.font_file = Path.cwd() / 'Assets' / 'Fonts' / 'Silkscreen' / 'Silkscreen-Bold.ttf'
 
     def initialize_dynamic_settings(self) -> None:
+        """
+        Initializes settings that change throughout gameplay (difficulty scaling).
+        """
         self.ship_speed = 10
         self.starting_ship_count = 3
 
@@ -64,6 +68,9 @@ class Settings:
         self.alien_points = 50
 
     def increase_difficulty(self) -> None:
+        """
+        Increases speed-related settings to make the game progressively harder.
+        """
         self.ship_speed *= self.difficulty_scale
         self.bullet_speed *= self.difficulty_scale
         self.fleet_speed *= self.difficulty_scale

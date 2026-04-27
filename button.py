@@ -1,3 +1,12 @@
+"""
+Program: Alien Invasion - Button
+Author: Gaven Huynh
+Purpose: Provides a clickable button used for starting or restarting the game.
+Starter Code: Built upon starter code and assets provided by the class
+then fully fleshed out by me in a different repo. That was imported
+into this repo for further editing to make it more my own.
+Date: April 26th 2026
+"""
 import pygame.font
 
 from typing import TYPE_CHECKING
@@ -6,7 +15,13 @@ if TYPE_CHECKING:
     from alien_invasion import AlienInvasion
 
 class Button:
+    """
+    Represents a clickable button displayed on the screen.
+    """
     def __init__(self, game: 'AlienInvasion', msg) -> None:
+        """
+        Initializes the button with text and position.
+        """
         self.game = game
         self.screen = game.screen
         self.boundaries = game.screen.get_rect()
@@ -21,6 +36,9 @@ class Button:
         self._prep_msg(msg)
 
     def _prep_msg(self, msg) -> None:
+        """
+        Renders the button text as an image.
+        """
         self.msg_image = self.font.render(
             msg, True, self.settings.text_color, None
             )
@@ -28,8 +46,14 @@ class Button:
         self.msg_image_rect.center = self.rect.center
 
     def draw(self) -> None:
+        """
+        Draws the button and its text onto the screen.
+        """
         self.screen.fill(self.settings.button_color, self.rect)
         self.screen.blit(self.msg_image, self.msg_image_rect)
 
-    def check_clicked(self, mouse_pos) -> None:
+    def check_clicked(self, mouse_pos) -> bool:
+        """
+        Checks if the button has been clicked.
+        """
         return self.rect.collidepoint(mouse_pos)

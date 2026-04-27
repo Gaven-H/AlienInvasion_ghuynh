@@ -122,6 +122,9 @@ class AlienInvasion:
         print(self.game_stats.ships_left)
     
     def restart_game(self) -> None:
+        """
+        Restarts the game by resetting stats, difficulty, and game state.
+        """
         self.settings.initialize_dynamic_settings()
         self.game_stats.reset_stats()
         self.HUD.update_scores()
@@ -172,6 +175,9 @@ class AlienInvasion:
                 self._check_button_clicked()
             
     def _check_button_clicked(self) -> None:
+        """
+        Checks if the play button has been clicked and starts the game.
+        """
         mouse_pos = pygame.mouse.get_pos()
         if self.play_button.check_clicked(mouse_pos):
             self.restart_game()
